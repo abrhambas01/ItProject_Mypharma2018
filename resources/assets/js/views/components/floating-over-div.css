@@ -1,0 +1,30 @@
+
+<style>
+   #wrapper { position: relative; }
+   #over_map { position: absolute; top: 10px; left: 10px; z-index: 99; }
+</style>
+
+<div id="wrapper">
+   <div id="google_map">
+
+   </div>
+
+   <div id="over_map">
+
+   </div>
+</div>
+
+
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}

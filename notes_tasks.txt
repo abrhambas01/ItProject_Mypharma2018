@@ -1,0 +1,30 @@
+
+
+
+
+TASKS: 
+
+
+
+
+
+Center the user's map to the current location .
+
+
+Scheduled Tasks for Mypharma
+
+	 
+	-> 	Your medicines are delivered.. => (SMS Reminder)
+
+
+Change the address to its proper name.. 
+
+
+Make the animation for pulse-loader to show up if we're calculating the route.. 
+
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+<div id="wrapper">
+	<div class="form-inputs p-10" v-if="!locationFound">
+		<h4>Where do you want to start..</h4>
+		<div class="input-field">
+			<!-- <input id="company" type="text"> -->
+			<gmap-autocomplete :value="dataUpdate.address" @place_changed="setPlace"></gmap-autocomplete>
+		</div>
+		<button class="waves-effect waves-light btn-large primary-color" @click="showRoute">START FROM HERE</button>
+
+	</div>
+
+	<gmap-map ref="map" :center="startLocation" id="map" :options="mapOptions">
+		<gmap-info-window :options="infoOptions" :position="infoPosition" :opened="infoOpened" @closeclick="infoOpened=false">
+			{{ infoContent }}
+		</gmap-info-window>
+
+		<gmap-marker
+		:icon="pin"
+		:position="startLocation" 
+		:clickable="true">
+	</gmap-marker>
+
+<!-- 	<gmap-info-window :position="startLocation">
+		Hello world!
+	</gmap-info-window>
+-->
+
+<!-- <google-marker v-for="m in markers" :position="m.position" :clickable="true" :draggable="true" @click="center=m.position"></google-marker> -->
+
+<!-- 
+	<gmap-marker v-for="(item, key) in markers" 
+	:key="key"
+	:position="item.position" 
+	:clickable="true" 
+	@click="center=m.position">
+</gmap-marker>
+-->
+<gmap-marker v-for="(item, key) in coordinates" 
+:key="key"
+:icon="house"
+:draggable="false"
+:position="getPosition(item.position)" 
+:clickable="true" 
+@click="toggleInfo(item,key)">
+</gmap-marker>
+
+</gmap-map>
+
+<div id="control-buttons">
+	<div class="fixed-action-btn horizontal click-to-toggle">
+		<div class="floating-button animated bouncein delay-3">
+			<span class="btn-floating btn-large green-lighten-3">
+				<i class="large material-icons">menu</i>
+			</span>
+		</div>
+		<ul>
+			
+			<div v-if='locationFound = false'>
+				<li>
+					<span @click="showRoute" class="btn-floating btn-large waves-effect waves-light blue btn z-depth-1 ">
+						<i class="material-icons">directions</i>
+					</span>
+				</li>
+			</div>
+
+
+
+			<li>
+				<span @click="toggleSatelliteMode" class="btn-floating btn-large waves-effect waves-light green btn z-depth-1 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Change Map Type">
+					<i class="material-icons">{{ maptype }}</i>
+				</span>
+			</li>
+
+			
+			<li>
+				<span @click="panToMyLocation" data-tooltip="Current Location" class="btn-floating btn-large waves-effect waves-light green-darken-2 btn z-depth-1">
+					<i class="material-icons">my_location</i>
+				</span>
+			</li>
+
+
+			<li>
+				<span data-tooltip="Show Directions" class="modal-trigger btn-floating btn-large waves-effect waves-light orange btn z-depth-1">
+					<i class="material-icons">directions</i>
+				</span>
+			</li>
+
+
+			<div id="modal4" class="modal bottom-sheet">
+				<div class="modal-content choose-date">
+					<p><i class="ion-ios-clock-outline"></i>Today</p>
+					<p><i class="ion-ios-alarm-outline"></i>Tomorrow</p>
+					<p><i class="ion-ios-stopwatch-outline"></i>Next week</p>
+					<p><i class="ion-ios-timer-outline"></i>Next month</p>
+					<p><i class="ion-ios-speedometer-outline"></i>Choose date</p>
+				</div>
+			</div>
+
+
+		</ul>
+	</div>
+</div>
+
+</div>
+
+
+
+
+<!-- @click="toggleInfo(item, key)" -->
+
+
+
+
+
+
+
+
+	<!-- 	<gmap-marker v-for="(item, key) in coordinates" :key="key" :value="newEvent.address" position="getPosition(item)" :clickable="true" @click="toggleInfo(item, key)" />
+	</gmap-marker>
+-->
+
+
+
+
+
+
+
+		<!-- Floating Action Button
+<!-- 		<div class="floating-button page-fab animated bouncein delay-3">
+			<a class="btn-floating btn-large waves-effect waves-light accent-color btn z-depth-1 modal-trigger" href="#modal4">
+				<i class="ion-plus"></i>
+			</a>
+		</div>
+	-->
+
