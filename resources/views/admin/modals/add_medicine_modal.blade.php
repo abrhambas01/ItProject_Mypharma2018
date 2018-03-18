@@ -59,6 +59,8 @@
 						<div class="col-md-9">
 							<div class="form-material">
 								<input type="file" class="form-control photo" id="photo" name="photo" placeholder="">
+								<span class="danger">*If you don't have an image a default picture is used.</span>
+
 								<label for="material-text">Attach a Photo </label>
 							</div>
 						</div>

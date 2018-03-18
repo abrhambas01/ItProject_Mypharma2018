@@ -18,9 +18,7 @@ use Debugbar ;
 
 use Storage ; 
 
-
 use Carbon\Carbon ; 
-
 use App\Medicine ; 
 
 class MedicinesController extends Controller

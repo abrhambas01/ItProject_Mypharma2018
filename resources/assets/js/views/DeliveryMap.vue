@@ -18,61 +18,6 @@
 			</gmap-info-window>
 
 
-			<div id="control-buttons" >
-				<div class="fixed-action-btn horizontal click-to-toggle">
-					<div class="floating-button animated bouncein delay-3">
-						<span class="btn-floating btn-large green-lighten-3">
-							<i class="large material-icons">menu</i>
-						</span>
-					</div>
-					<ul>
-
-						<div v-if='locationFound = false'>
-							<li>
-								<span @click="showRoute" class="btn-floating btn-large waves-effect waves-light blue btn z-depth-1 ">
-									<i class="material-icons">directions</i>
-								</span>
-							</li>
-						</div>
-
-
-
-						<li>
-							<span @click="toggleSatelliteMode" class="btn-floating btn-large waves-effect waves-light green btn z-depth-1 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Change Map Type">
-								<i class="material-icons">{{ maptype }}</i>
-							</span>
-						</li>
-
-
-						<li>
-							<span @click="panToMyLocation" data-tooltip="Current Location" class="btn-floating btn-large waves-effect waves-light green-darken-2 btn z-depth-1">
-								<i class="material-icons">my_location</i>
-							</span>
-						</li>
-
-
-						<li>
-							<span data-tooltip="Show Directions" class="modal-trigger btn-floating btn-large waves-effect waves-light orange btn z-depth-1">
-								<i class="material-icons">directions</i>
-							</span>
-						</li>
-
-
-						<div id="modal4" class="modal bottom-sheet">
-							<div class="modal-content choose-date">
-								<p><i class="ion-ios-clock-outline"></i>Today</p>
-								<p><i class="ion-ios-alarm-outline"></i>Tomorrow</p>
-								<p><i class="ion-ios-stopwatch-outline"></i>Next week</p>
-								<p><i class="ion-ios-timer-outline"></i>Next month</p>
-								<p><i class="ion-ios-speedometer-outline"></i>Choose date</p>
-							</div>
-						</div>
-
-
-					</ul>
-				</div>
-			</div>
-
 			<gmap-marker
 			:icon="pin"
 			:position="startLocation" 
@@ -100,13 +45,71 @@
 :draggable="false"
 :position="getPosition(item.position)" 
 :clickable="true" 
-@click="toggleInfo(item,key)">
+@click="toggleInfoWindow(m,i)">
 </gmap-marker>
 
 </gmap-map>
 
 
+<div id="control-buttons" v-show="coordinates.length != 0">
+	<div class="fixed-action-btn horizontal click-to-toggle">
+		<div class="floating-button animated bouncein delay-3">
+			<span class="btn-floating btn-large green-lighten-3">
+				<i class="large material-icons">menu</i>
+			</span>
+		</div>
+		<ul>
+
+			<div v-if='locationFound = false'>
+				<li>
+					<span @click="showRoute" class="btn-floating btn-large waves-effect waves-light blue btn z-depth-1 ">
+						<i class="material-icons">directions</i>
+					</span>
+				</li>
+			</div>
+
+
+
+			<li>
+				<span @click="toggleSatelliteMode" class="btn-floating btn-large waves-effect waves-light green btn z-depth-1 btn tooltipped" data-position="left" data-delay="50" data-tooltip="Change Map Type">
+					<i class="material-icons">{{ maptype }}</i>
+				</span>
+			</li>
+
+
+			<li>
+				<span @click="panToMyLocation" data-tooltip="Current Location" class="btn-floating btn-large waves-effect waves-light green-darken-2 btn z-depth-1">
+					<i class="material-icons">my_location</i>
+				</span>
+			</li>
+
+
+			<li>
+				<span data-tooltip="Show Directions" class="modal-trigger btn-floating btn-large waves-effect waves-light orange btn z-depth-1">
+					<i class="material-icons">directions</i>
+				</span>
+			</li>
+
+
+			<div id="modal4" class="modal bottom-sheet">
+				<div class="modal-content choose-date">
+					<p><i class="ion-ios-clock-outline"></i>Today</p>
+					<p><i class="ion-ios-alarm-outline"></i>Tomorrow</p>
+					<p><i class="ion-ios-stopwatch-outline"></i>Next week</p>
+					<p><i class="ion-ios-timer-outline"></i>Next month</p>
+					<p><i class="ion-ios-speedometer-outline"></i>Choose date</p>
+				</div>
+			</div>
+
+
+		</ul>
+	</div>
 </div>
+
+
+
+</div>
+
 
 <!-- @click="toggleInfo(item, key)" -->
 	<!-- 	<gmap-marker v-for="(item, key) in coordinates" :key="key" :value="newEvent.address" position="getPosition(item)" :clickable="true" @click="toggleInfo(item, key)" />
@@ -158,7 +161,7 @@ export default {
 
 			pin : 'dist/img/map-marker.png' ,
 
-			house : 'dist/img/pin.png',
+			house : 'dist/img/user.png',
 
 			isLoading: true , 
 
@@ -639,17 +642,17 @@ export default {
 				}
 
 			});
+			}
+		},
+
+		mounted(){
+			this.fetchDeliveries();
+			this.initializeMap() ; 
 		}
-	},
+	};
+	</script>
 
-	mounted(){
-		this.fetchDeliveries();
-		this.initializeMap() ; 
-	}
-};
-</script>
-
-<style lang="css" scoped>
+	<style lang="css" scoped>
 /* Always set the map height explicitly to de	e the size of the div
 * element that contains the map. */
 #map { 

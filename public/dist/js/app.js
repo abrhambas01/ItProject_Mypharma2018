@@ -2003,6 +2003,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 // import maps from './js/maps.js';
@@ -2448,47 +2449,47 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_3_vue2_google_maps__, {
 									});
 						},
 						initializeMap: function initializeMap() {
-									var _this5 = this;
 
-									if (this.coordinates.length == 0) {
+									// if ( this.coordinates.length === 0 ) {
 
-												__WEBPACK_IMPORTED_MODULE_0_sweetalert___default()("No deliveries", "You don't have deliveries!", "info");
-									} else {
+									// 	swal("No deliveries", "You don't have deliveries!", "info");
 
-												this.locateMe().then(function (location) {
-															_this5.startLocation = { lat: location.latitude, lng: location.longitude };
-															_this5.mapLoaded = true;
-															_this5.startLocation = [{ position: _this5.center }];
-												});
-									}
+									// }else {
 
-									// GMaps.geolocate({
-									// 	success: function(position) {
+									// 	this.locateMe().then((location) => {
+									// 		this.startLocation = {lat: location.latitude, lng: location.longitude}
+									// 		this.mapLoaded = true;
+									// 		this.startLocation = [{ position: this.center }]
+									// 	});	
 
-									// 		swal("Info", "Did we get your location right ? If not please use the searchbox!", "info");
+									// }
 
-									// 		this.startPosition.lat = position.coords.latitude ;
 
-									// 		this.startPosition.lng = position.coords.longitude ;
+									__WEBPACK_IMPORTED_MODULE_1_gmaps___default.a.geolocate({
+												success: function success(position) {
 
-									// 	},
-									// 	error: function(error) {
-									// 		swal("Geolocation not found", "We can't see your location. Please use the searchbox!", "info");
+															__WEBPACK_IMPORTED_MODULE_0_sweetalert___default()("Info", "Did we get your location right ? If not please use the searchbox!", "info");
 
-									// 		this.locationFound = false ; 
+															this.startPosition.lat = position.coords.latitude;
 
-									// 		console.log('Geolocation failed: '+error.message);
+															this.startPosition.lng = position.coords.longitude;
+												},
+												error: function error(_error) {
+															__WEBPACK_IMPORTED_MODULE_0_sweetalert___default()("Geolocation not found", "We can't see your location. Please use the searchbox!", "info");
 
-									// 	},
-									// 	not_supported: function() {
-									// 		alert("Your browser does not support geolocation");
-									// 	},
-									// 	always: function() {
-									// 		// alert("Always alert!");
-									// 		console.log('Call this always');
-									// 	}
+															this.locationFound = false;
 
-									// });
+															console.log('Geolocation failed: ' + _error.message);
+												},
+												not_supported: function not_supported() {
+															alert("Your browser does not support geolocation");
+												},
+												always: function always() {
+															// alert("Always alert!");
+															console.log('Call this always');
+												}
+
+									});
 						}
 			},
 
@@ -3751,7 +3752,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* Always set the map height explicitly to de\te the size of the div\r\n* element that contains the map. */\n#map[data-v-1075de6a] { \r\n\twidth: 100%;\r\n\theight: 100vh;\r\n\tposition: relative ;\n}\n#wrapper[data-v-1075de6a] {\r\n\r\n\tposition: relative ;\n}\n.form-inputs[data-v-1075de6a] {\r\n\tposition: absolute; \r\n\ttop: 10%;\r\n\tleft: 10px; \r\n\tz-index: 5;\r\n\tbackground-color: #fff;\r\n\twidth : 85%;\n}\n.loader[data-v-1075de6a]{\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\ttext-align: center;\r\n\tmin-height: 100vh;\n}\n.mobile-fab-tip[data-v-1075de6a] {\r\n\tposition: fixed;\r\n\tright: 85px;\r\n\tpadding:0px 0.5rem;\r\n\ttext-align: right;\r\n\tbackground-color: #323232;\r\n\tborder-radius: 2px;\r\n\tcolor: #FFF;\r\n\twidth:auto;\n}\n#control-buttons[data-v-1075de6a] {\r\n\tposition: absolute; bottom: 34px; left: 10px ; z-index: 99; padding-top:5px;\n}\nhtml[data-v-1075de6a], body[data-v-1075de6a] {\r\n\theight: 100%;\r\n\tmargin: 0;\r\n\tpadding: 0;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/* Always set the map height explicitly to de\te the size of the div\r\n* element that contains the map. */\n#map[data-v-1075de6a] { \r\n\twidth: 100%;\r\n\theight: 100vh;\r\n\tposition: relative ;\n}\n#wrapper[data-v-1075de6a] {\r\n\r\n\tposition: relative ;\n}\n.form-inputs[data-v-1075de6a] {\r\n\tposition: absolute; \r\n\ttop: 10%;\r\n\tleft: 10px; \r\n\tz-index: 5;\r\n\tbackground-color: #fff;\r\n\twidth : 85%;\n}\n.loader[data-v-1075de6a]{\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\ttext-align: center;\r\n\tmin-height: 100vh;\n}\n.mobile-fab-tip[data-v-1075de6a] {\r\n\tposition: fixed;\r\n\tright: 85px;\r\n\tpadding:0px 0.5rem;\r\n\ttext-align: right;\r\n\tbackground-color: #323232;\r\n\tborder-radius: 2px;\r\n\tcolor: #FFF;\r\n\twidth:auto;\n}\n#control-buttons[data-v-1075de6a] {\r\n\tposition: absolute; bottom: 34px; left: 10px ; z-index: 99; padding-top:5px;\n}\nhtml[data-v-1075de6a], body[data-v-1075de6a] {\r\n\theight: 100%;\r\n\tmargin: 0;\r\n\tpadding: 0;\n}\r\n", ""]);
 
 // exports
 

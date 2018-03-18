@@ -187,8 +187,7 @@ return [
         OwenMelbz\PwaManifest\PwaManifestServiceProvider::class,
         Nexmo\Laravel\NexmoServiceProvider::class,
         'Aloha\Twilio\Support\Laravel\ServiceProvider',
-
-
+        Barryvdh\Debugbar\ServiceProvider::class,
 
     ],
 
@@ -245,8 +244,8 @@ return [
         'Pusher' => Pusher\Pusher::class,
         'Chikka' => Jag\Chikka\ChikkaFacade::class,
         'Nexmo' => Nexmo\Laravel\Facade\Nexmo::class,
-        'Twilio' => 'Aloha\Twilio\Support\Laravel\Facade'   
-
+        'Twilio' => 'Aloha\Twilio\Support\Laravel\Facade'  ,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
 
     ],
