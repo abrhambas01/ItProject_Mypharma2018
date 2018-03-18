@@ -13,3 +13,5 @@ yarn-error.log
 .env
 /resources/assets/lib
 /public/storage
+todos.txt
+itsatsit
