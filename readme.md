@@ -1,5 +1,5 @@
 
-##Special Thanks to Laravel for providing us backend 
+#Special Thanks to Laravel for providing us backend 
 
 
 
@@ -30,16 +30,19 @@ Laravel is accessible, yet powerful, providing tools needed for large, robust ap
 > And to the following 
 
 
-Templates : (ALL RIGHTS RESERVED)
+## Templates : (ALL RIGHTS RESERVED)
 
 
 
-1. Codebase and Kenny Admin Template 
+1. Codebase and Kenny Admin Template from Themeforest
 
-2. Jetpack Mobile Template
+2. Material Design Lite by Google for giving us mobile template..
 
 3. Google Maps API (https://developers.google.com/maps/documentation/javascript/tutorial)
+
 4. Directions API https://developers.google.com/maps/documentation/directions/start
+
+
 
 
 
@@ -47,14 +50,16 @@ Templates : (ALL RIGHTS RESERVED)
 
 ## About Mypharma
 
-Mypharma is a progressive  web application that delivers progressive capabilities that delivers free medicines to all senior citizens in Cebu City,PH  
+** Mypharma is a progressive  web application that delivers progressive capabilities that delivers free medicines to all senior citizens in Cebu City,PH ** 
 
 TO use one : Here is a 
 [Youtube Video](https://www.youtube.com/watch?v=MxTaDhwJDLg)
 
 
 
-To use this application 
+## To start developing / using this application 
+
+ **Ensure Git, Composer and nodejs is installed to **
 
 
 After typing the following in the terminal
@@ -64,7 +69,7 @@ After typing the following in the terminal
 Ensure Npm is installed on the computer https://nodejs.org/en/download/ [64 bit installer is available](https://nodejs.org/dist/v8.10.0/node-v8.10.0-x64.msi)
 
 
-#Steps to Reproduce 
+# Steps to Reproduce 
 
 1. Install all composer dependencies in terminal with 
 ` $ composer install`
@@ -72,9 +77,9 @@ Ensure Npm is installed on the computer https://nodejs.org/en/download/ [64 bit 
 2. Install all node dependencies with
  `$ npm install` Or if yarn is installed `$ yarn install`
 
-3. Run the server locally with php artisan serve <--options>
+3. Run the server locally with php artisan serve <options>
 
-4. npm run dev when the application's ready and npm run hot for debugging purposes using the live reloading capability given to us by webpack.
+4. npm run dev when the application's ready and npm run hot when you're developing using the live reloading capability given to us by webpack.
 
 
 

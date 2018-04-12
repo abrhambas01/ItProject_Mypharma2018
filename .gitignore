@@ -16,3 +16,6 @@ yarn-error.log
 todos.txt
 itsatsit
 resources/views/references
+/.settings
+/.nbproject
+()create
