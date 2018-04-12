@@ -50,7 +50,7 @@ Laravel is accessible, yet powerful, providing tools needed for large, robust ap
 
 ## About Mypharma
 
-** Mypharma is a progressive  web application that delivers progressive capabilities that delivers free medicines to all senior citizens in Cebu City,PH ** 
+**Mypharma is a progressive  web application that delivers progressive capabilities that delivers free medicines to all senior citizens in Cebu City,PH** 
 
 TO use one : Here is a 
 [Youtube Video](https://www.youtube.com/watch?v=MxTaDhwJDLg)
@@ -59,7 +59,7 @@ TO use one : Here is a
 
 ## To start developing / using this application 
 
- * Ensure Git, Composer and nodejs is installed to *
+ * Ensure [Git] (https://git-scm.com/downloads), [Composer](getcomposer.org) and [nodejs](https://nodejs.org/en/)is installed on your machine. *
 
 
 After typing the following in the terminal
