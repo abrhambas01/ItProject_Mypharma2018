@@ -59,7 +59,7 @@ TO use one : Here is a
 
 ## To start developing / using this application 
 
- **Ensure Git, Composer and nodejs is installed to **
+ * Ensure Git, Composer and nodejs is installed to *
 
 
 After typing the following in the terminal
