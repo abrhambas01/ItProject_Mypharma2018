@@ -1,31 +1,31 @@
-    <!DOCTYPE html>
-    <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        <style>
-            #map{
-              display: block;
-              width: 95%;
-              height: 500px;
-              margin: 0 auto;
-              -moz-box-shadow: 0px 5px 20px #ccc;
-              -webkit-box-shadow: 0px 5px 20px #ccc;
-              box-shadow: 0px 5px 20px #ccc;
-          }
-      </style>
+<style>
+    #map{
+      display: block;
+      width: 95%;
+      height: 500px;
+      margin: 0 auto;
+      -moz-box-shadow: 0px 5px 20px #ccc;
+      -webkit-box-shadow: 0px 5px 20px #ccc;
+      box-shadow: 0px 5px 20px #ccc;
+  }
+</style>
 
-  </head>
+</head>
   <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
@@ -95,5 +95,6 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZWTTkguiQpNFtckZZ5lpJLvVvMc0hsmI&libraries=places"></script>
 
 @yield('js')
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 /***
     Classes I've created and directory location : 
@@ -11,36 +11,34 @@
 3. App\Services.. 
 
     **/
-
-
-
 /***********************************
 
 MYPHARMA ROUTES built with laravel 5.4 
 
-
 Stacks Used : 
+
 
 2. Jquery/Vuejs
 
 3. Chart.js/Pages.js
 
 4. Codebase Admin Panel. 
-    
+
 5. Jetpack Mobile Template from Themeforest. 
+
 
 6. MYSQL (Server) -> 
 
-**********/
+*********
+
+*/
 
 
 use App\Events\MemberIsAdded;
 use App\Events\MemberDeleted;
 use App\SeniorCitizen ; 
 use App\CustomerParcelDelivery; 
-
 use App\Dosage; 
-
 use Carbon\Carbon; 
 //Add the Middleware soon auth and admin here only admin can access this. 
 
@@ -68,8 +66,8 @@ Route::group(['middleware'=> ['auth','isAdmin'], 'prefix' => 'admin'], function 
 
   Route::get('members/couriers',
     [
-      'as' => 'members.couriers' , 
-      'uses' =>    'MembersController@couriers'
+    'as' => 'members.couriers' , 
+    'uses' =>    'MembersController@couriers'
     ]);
 
   Route::get('members/social-workers', [  'as' => 'members.socialworkers',   'uses' => 'MembersController@socialworkers']);
@@ -106,7 +104,8 @@ Route::group(['middleware'=> ['auth','isAdmin'], 'prefix' => 'admin'], function 
 
 
 
-Social Worker Routes Starts here
+Social Worker Routes
+ Starts here
 
 
 ******************
@@ -177,18 +176,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'socialworker'], function() 
 
 });
 
-/*
 
-******************
-
-
-Courier Routes Starts here
-
-
-******************
-
-
-*/
 Route::post('text',function(){
   function itexmo($number,$message,$apicode){
 
@@ -258,21 +246,38 @@ Route::get('sms/itextmo',function(){
 });
 
 
+/*
+
+******************
+
+
+Courier Routes Starts here
+
+
+******************
+
+
+*/
+
 Route::group(['middleware' => ['auth', 'isCourier']], function () {
-  Route::get('/', 'CourierController@dashboard')->name('courier.dashboard');
+
+  // Route::get('/', 'CourierController@dashboard')->name('courier.dashboard');
+
+  Route::get('/', 'CourierController@home')->name('courier.dashboard');
+  Route::get('courier/parcels/to-pick-up','CourierController@getTodaysDeliveries')->name('courier.pickup');
+  Route::get('courier/deliveries/today','PagesController@deliveryMap')->name('courier.deliveries');
+
+
+  // Route::get('courier/dashboard','CourierController')->name('')
 });
 
 
 /*
   |-------------------------------------------------------------------------------
+           
 
-        
-            C O N S U M A B L E API's..
-
-
-        v0 -> Count 
-        v1 -> Retrieval 
-        v2 -> Availability
+            C O N S U M A B L E API's.. in mypharma
+          Version 1 =>  api/v1
 
  |-------------------------------------------------------------------------------
 
@@ -317,7 +322,7 @@ Route::get('api/v1/parcels/to-pack','CourierController@getTodaysParcelsToPack');
 
 */
 
-      Route::get('api/v1/parcels','CourierController@getDeliveriesInformation')->name('api.deliveries');
+ Route::get('api/v1/parcels','CourierController@getDeliveriesInformation')->name('api.deliveries');
 
 
 /** 
@@ -356,11 +361,11 @@ Route::get('api/v1/parcels/to-pack','CourierController@getTodaysParcelsToPack');
   |-------------------------------------------------------------------------------
   | URL:            /#/pickup/parcels
   | Controller:     CourierController@updateParcelStatus
+  
   | Method:         PUT/POST/UPDATE
     Actor :         courier
   | Description:    Gets parcels to be delivered then to be checked if it is packed by the courier..
   */  
-
   Route::post('api/parcel/uncheck/{id}','CourierController@markasCheck');
 
 
@@ -478,7 +483,7 @@ Route::get('api/v1/delivery/information',function(){
     ['delivery_date', '=', $today],
     ['courier_id', '=', $id],
     ['delivery_status_code','=',$undeliveredStatus]
-  ])->get();
+    ])->get();
 
 
 
@@ -489,11 +494,11 @@ Route::get('api/v1/delivery/information',function(){
     $owner = $parcel->owner ; 
 
     $data[] = (object)[
-      'full_name' => $owner->first_name." ".$owner->middle_name." ".$owner->last_name,
-      'complete_address' => $owner->complete_address,
-      'lat' => $owner->lat ,
-      'lng' => $owner->lng ,
-      'mobile_phone' => $owner->mobile_phone
+    'full_name' => $owner->first_name." ".$owner->middle_name." ".$owner->last_name,
+    'complete_address' => $owner->complete_address,
+    'lat' => $owner->lat ,
+    'lng' => $owner->lng ,
+    'mobile_phone' => $owner->mobile_phone
 
     ];
 
@@ -556,6 +561,7 @@ Route::get('api/v1/de',function(){
 
 
 Route::get('api/v1/recipients',function(){
+  
   $recipients = CustomerParcelDelivery::join('senior_citizens','senior_citizens.id','=','customer_parcels_deliveries.senior_citizen_id')->join('medicine_dosages','customer_parcels_deliveries.product_dosage_id','=','medicine_dosages.id')->join('medicines','medicine_dosages.medicine_id','=','medicines.id')
   ->where('delivery_date','=',Carbon::tomorrow())
   ->select('first_name','middle_name','last_name','dosage_volume','form','generic_name','product_quantity','mobile_phone')->get() ; 
@@ -730,16 +736,16 @@ Route::get('seed/statuses', function(){
     [  'status_code'   => 101, 'title' => 'Delivered', 'description' => 'Parcel is delivered to the user..'],
     [  'status_code'   => 102, 'title' => 'Undelivered', 'description' => 'Was not picked up or delivered' ],
     [ 
-     'status_code'   => 103, 
-     'title' =>'Pending', 
-     'description' =>'Put on Hold by the courier'
-   ],
-   [
+    'status_code'   => 103, 
+    'title' =>'Pending', 
+    'description' =>'Put on Hold by the courier'
+    ],
+    [
     'status_code'   => 104,
     'title' =>'Left Warehouse',
     'description' => 'Parcel is picked by the courier'
-  ]
-]); 
+    ]
+    ]); 
 
 });
 
@@ -783,7 +789,7 @@ Route::get('test/sms',function(){
     'to'   => '639058185519',
     'from' => '639058185519 ',
     'text' => 'Ulsdjf'
-  ]);
+    ]);
 });
 
 
@@ -796,9 +802,6 @@ Sends SMS to all Senior Citizens with Nexmo SMS API..
 */
 
 Route::get('test/sms/send','MembersController@sendSMSForTomorrowsDeliveries'); 
-
-Route::get('test/image-upload','AppController@testUpload');
-
 
 Route::get('/get/courier_id',function(){
 
@@ -851,7 +854,7 @@ Route::post('chikka/post', function() {
         "secret_key" => $secret_key,
         "message_type" => "SEND",
         "message" => $message
-      );
+        );
       $postvars = http_build_query($post_data);
             // open connection
       $ch = curl_init();

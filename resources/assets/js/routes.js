@@ -1,59 +1,22 @@
+
 import VueRouter from 'vue-router';
 
 import Home from './views/Home.vue';
-
-import ParcelsToDeliver from './views/Parcels.vue';
-// import TodaysDelivery from  './views/TodaysDelivery.vue' ; 
-
-import MapOfTodaysDeliveries from  './views/DeliveryMap.vue' ; 
-
-import PendingDelivery from  './views/ArchivedDelivery.vue' ; 
-
-import Profile from  './views/Profile.vue' ; 
-
-import UpdateProfile from  './views/UpdateProfile.vue' ; 
-
-import Lock from  './views/LockScreen.vue' ; 
+import Account from './views/Account.vue' ; 
 
 const routes = [ 	
 {
 	path: '/', 
-	component: Home	
-} , 
-
-
+	component: Home
+},
 {
-	path: '/pickup/parcels', 
-	component: ParcelsToDeliver
-} , 
-{ 
-	path: '/deliveries/today',
-	component: MapOfTodaysDeliveries
-},
-
-{ 
-	path: '/deliveries/pending', 
-	component: PendingDelivery  
-}, 
-
-{ 
-	path: '/profile', 
-	component: Profile  
-}, 
-
-{ 
-	path: '/profile/update', 
-	component: UpdateProfile  
-},
-
-
-{ 
-	path: '/lock', 
-	component: Lock  
+	path : '/account', 
+	component: Account
 }
 
 ];
 
 export default new VueRouter({
-	routes
+	routes,
+	linkActiveClass: 'is-active'
 });

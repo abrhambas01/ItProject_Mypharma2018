@@ -1,9 +1,35 @@
 let mix = require('laravel-mix');		
+const path = require('path');
 
 
-//THis should be included in the courier..
+
+// this should be included in the courier..
 
 mix.js('resources/assets/js/app.js', 'public/dist/js/');
+
+
+mix.browserSync({
+	proxy: 'localhost:3000'
+});
+
+// run versioning on production only
+// if (mix.inProduction()) {
+// 	mix.version();
+// }
+
+
+
+
+
+// fix css files 404 issue
+// mix.webpackConfig({
+// 	devServer: {
+// 		contentBase: path.resolve(__dirname, 'public'),
+// 	}
+// });
+
+// mix.js('resources/assets/js/main.js', 'public/js/app.js');
+
 // mix.js('resources/assets/js/admin.js', 'public/dist/js/');
 
 
@@ -13,17 +39,7 @@ mix.js('resources/assets/js/app.js', 'public/dist/js/');
 
 // mix.js('resources/assets/js/gmaps.js','public/js/');
 
-if (process.env.npm_lifecycle_event !== 'hot') {
-	mix.version()
-}
 
-const path = require('path');
-// fix css files 404 issue
-mix.webpackConfig({
-	devServer: {
-		contentBase: path.resolve(__dirname, 'public'),
-	}
-});
 
 //Courier and others...
 // mix.js('resources/assets/js/js/sweetalert.js','public/dist/js');
@@ -60,7 +76,7 @@ mix.webpackConfig({
 // 	],'public/dist/css/courier.css');
 
 
-// mix.version();
+mix.version();
 
 
 // mix.js('resources/assets/js/js/maps.js','public/build/js/maps.js');

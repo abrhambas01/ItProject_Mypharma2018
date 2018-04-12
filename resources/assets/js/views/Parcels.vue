@@ -56,7 +56,7 @@ export default {
 	methods : {
 
 		noParcelAlert() {
-			swal ( "Alert" ,  "No Deliveries for Today!" ,  "info" )
+			swal ( "Alert" ,  "No Deliveries for Today!" ,  "success" )
 		},
 
 		welcomeAlert() {
@@ -66,9 +66,6 @@ export default {
 		defaultAlert() {
 			swal ( "Alert" ,  "Retrieving your deliveries."  ,  "info" )
 		},
-
-
-
 
 
 		fetch(){

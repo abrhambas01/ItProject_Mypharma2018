@@ -23,24 +23,17 @@
 					</div>
 
 
+			
 					<div class="form-group row">
 						<div class="col-md-9">
 							<div class="form-material">
-								{!! Form::text('monthly_budget'	, null, ['id'=>'budget','class'=>'form-control budget','placeholder'=>'']) !!}
-								<label for="material-text">Monthly Budget(PHP)</label>
+								{!! Form::text('monthly_budget',null, ['id'=>'budget','class'=>'form-control facebook_profile','placeholder'=>'']) !!}
+								<label for="material-text">Facebook Profile</label>
 							</div>
 						</div>
 					</div>
 
-					<div class="form-group row">
-						<div class="col-md-9">
-							<div class="form-material">
-								<input type="text" id="full_address" name="barangay_location" class="form-control" onclick="lookupGeoData();">							<label for="material-text">Location in the Map (Click on The Field) </label>
-							</div>
-						</div>
-					</div>
 
-				
 
 					<div class="form-group row">
 

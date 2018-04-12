@@ -1,11 +1,9 @@
 <router-link to="/" exact tag="li">
-  <a class="no-child">
-    <i class="material-icons">assignment</i>Dashboard
-  </a>
+  <i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home
 </router-link>
 
 
-<router-link to="/pickup/parcels" tag="li">
+<router-link to="/pickup/parcels" exact tag="li">
   <a class="no-child">
     <i class="ion-ios-box-outline"></i>Parcels to Pick up
     <span class="badge">{{ $parcelsToPickUp }} </span>
@@ -37,6 +35,7 @@
   
   <div class="collapsible-body">
     <ul class="collapsible">
+
       <router-link to="/profile" tag="li">
         <a class="no-child">
           <i class="ion-person"></i>Profile

@@ -118,20 +118,12 @@ $('.edituser').on('click', function (evt) {
         e.preventDefault();
         
         var name = $('.full-name').val();
-        
         var email = $('.emailEdit').val();
-        
         var pWord = $('.pWord').val();
-        
         var role_id = $('select[name=role_id]').val();
-        
         var barangay_id = $('select[name=barangay_id]').val();
-        
         var status = $('select[name=status]').val();
-
-
-        updateUser(id, name, email, pWord, role_id, barangay_id, status, urlupdateuser); //sends all user data to ajax post request 
-        
+        updateUser(id, name, email, pWord, role_id, barangay_id, status, urlupdateuser); //sends all user data to ajax post request      
     });
 });
 

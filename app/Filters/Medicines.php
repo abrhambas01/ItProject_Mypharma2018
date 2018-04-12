@@ -10,7 +10,6 @@ class Medicines extends Filters {
 
 		return $results ; 
 	
-
 	}
 
 

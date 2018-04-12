@@ -11,6 +11,7 @@
 					</div>
 				</div>
 				<div class="block-content">
+
 					{{ Form::open(['id' => 'createBarangayForm', 'method'=>'POST', 'files' => 'true']) }} 
 
 
@@ -31,12 +32,14 @@
 
 			</div>
 		</div>
+
 		<div class="modal-footer">
 			<button type="button" class="btn btn-alt-secondary" data-dismiss="modal">Close</button>
 			<button type="button" id="registerBarangayBtn" class="btn btn-alt-success">
 				<i class="fa fa-check"></i> Register
 			</button>
 		</div>
+
 	</div>
 </div>
 </div>

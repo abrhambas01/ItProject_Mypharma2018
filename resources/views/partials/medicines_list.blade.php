@@ -13,7 +13,7 @@
 	</td>
 	@else
 
-	<td class="text-center"><img src="{{ asset('storage/medicines/'.$medicine->picture) }}" height="75" width="75" alt=""> </td>
+	<td class="text-center"><img src="{{ asset('storage/'.$medicine->picture) }}" height="75" width="75" alt=""> </td>
 
 
 	@endif

@@ -10,10 +10,7 @@ class UserFilters extends Filters
 	}
 
 	public function nonAdmin(){
-
 		return User::plainusers()->where('status',1)->get() ;		
-
-
 	}
 
 
@@ -24,3 +21,4 @@ class UserFilters extends Filters
 	}
 
 }
+

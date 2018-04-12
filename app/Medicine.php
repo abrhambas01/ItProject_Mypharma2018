@@ -37,6 +37,8 @@ class Medicine extends Model
 		return $this->hasMany(Dosage::class) ; 
 	}
 	
+
+	
 	public function seniormedicine()
 	{
 		return $this->hasMany('App\SeniorMedicine');

@@ -32,7 +32,7 @@ export default {
 
 	}	
 };
-</script>
+</script>	
 
 <style lang="css" scoped>
 </style>

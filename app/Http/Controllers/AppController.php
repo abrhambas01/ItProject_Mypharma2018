@@ -30,12 +30,6 @@ class AppController extends Controller
 	}
 
 
-	public function testUpload(){
-
-		return view('upload-photo');
-	}
-
-
 	public function getRoles(){
 		return Role::select('id','name')->exceptadmin()->get() ; 
 	}
@@ -43,7 +37,7 @@ class AppController extends Controller
 
 	public function mapping()
 	{
-		return view('directions') ;
+		return view('tsp_directions.directions') ;
 	}
 
 
@@ -167,7 +161,7 @@ class AppController extends Controller
 
 
 
-	public function main () 
+	public function main() 
 	{
 		return view('layouts.app2');
 	} 

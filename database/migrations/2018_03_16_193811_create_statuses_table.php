@@ -12,16 +12,22 @@ class CreateStatusesTable extends Migration
      * @return void
      */
     public function up()
-    {
+    {   
 
        Schema::create('tasks', function (Blueprint $table) {
+
         $table->increments('id');
+        
         $table->text('body');
+
         $table->boolean('archive')->default(false);
+        
         $table->timestamps();
+
     });
 
-    }
+
+   }
 
     /**
      * Reverse the migrations.
@@ -30,6 +36,6 @@ class CreateStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statuses');
+        Schema::dropIfExists('tasks');
     }
 }

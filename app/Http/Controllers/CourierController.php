@@ -27,8 +27,30 @@ class CourierController extends Controller {
     app('debugbar')->disable();
     // auth()->user()->courier->parcel->courier ;  
     // $deliveriesForToday = 
-    return view('courier');
+    return view('courier')->with('username',Auth::user()->name);
   }
+
+
+  public function couriersHomePage(){
+    app('debugbar')->disable();
+    
+    return view('courier.index');
+  }
+
+  public function home()
+  {
+    app('debugbar')->disable();
+    return view('courier.index');
+  }
+
+  public function getTodaysDeliveries()
+  {
+    app('debugbar')->disable();
+    return view('courier.index');
+  }
+
+
+
 
 
   /*
@@ -110,9 +132,9 @@ class CourierController extends Controller {
   public function saveRoutes(Request $request)
   {
     // $parcels = $query->getParcelsForChecking($courier_id);
-    
 
-    
+
+
     return response()->json($request);    
   } 
 
@@ -165,21 +187,18 @@ class CourierController extends Controller {
   }
 
   public function changeParcelStatus(Request $request)
+  { 
+    $parcel_id =  request('parcel_id');  
+
+  }
+
+  public function DeliveryCharts()
   {
 
-   $parcel_id =  request('parcel_id');  
+    $id = auth()->user()->id ; 
+    $queryCount = DB::raw(count()) ; 
 
- }
-
- public function DeliveryCharts()
- {
-
-
-  $id = auth()->user()->id ; 
-  $queryCount = DB::raw(count()) ; 
-
-
-}
+  }
 
 
 

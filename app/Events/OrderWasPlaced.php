@@ -14,8 +14,6 @@ class OrderWasPlaced
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-
-
     /**
      * Create a new event instance.
      *

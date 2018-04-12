@@ -1,7 +1,10 @@
 <?php
 namespace App\Console\Commands;
+
 use Illuminate\Console\Command;
+
 use App\Core\Queries\SMSQueries  ;
+
 use App\Core\Services\SMSSender  ;
 
 
@@ -60,7 +63,7 @@ class SendsReminders extends Command
             'to'   => $mobile_number , 
             'from'   => '639058185519',
             'text' => 'Dear '.$owners_name.' Please be advised that you will receive your parcel tomorrow which will have the following :'
-        ]);
+            ]);
 
       });
          //Filter all the SMS Recipients and send

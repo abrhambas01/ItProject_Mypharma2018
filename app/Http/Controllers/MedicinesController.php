@@ -54,26 +54,28 @@ class MedicinesController extends Controller
     {   
         if ( request()->hasFile('photo')) { 
 
-            $image = request()->file('photo')->store('medicines','public');
+            $image = request()->file('photo') ;
+
+            $path = $image->store('medicines','public');
+
+            // return $image->getClientOriginalName()   ; 
             
-            $thumbImage = Image::make(Storage::get($image))->resize(75,null,function($constraint){
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            })->encode('png',75);   
+            // $thumbImage = Image::make(Storage::get($image))->resize(75,null,function($constraint){
+            //     $constraint->aspectRatio();
+            //     $constraint->upsize();
+            // })->encode('png',75);   
 
-            $fileName = $image->getClientOriginalName() ; 
+            // $fileName = $image->getClientOriginalName() ; 
 
-            Storage::put($image, $thumbImage);
-
-
-            // Storage::put('public/medicines/thumbs/'.$fileName .$thumbImage->getEncoded());
+            // Storage::put($image);
+            // Storage::put('public/medicines/'.$image);
 
             $medicine = Medicine::create([  
                 'medicine_class_id' => request('medicine_class_id'),
                 'name' => request('name'),
                 'form' => request('dosage_form'),
                 'price'=> request('price'),
-                'picture' => $image 
+                'picture' => $path 
             ]);
 
             return response()->json($medicine);
@@ -82,21 +84,20 @@ class MedicinesController extends Controller
 
         else {
 
-
-           $medicine = Medicine::create([  
+         $medicine = Medicine::create([  
             'medicine_class_id' => request('medicine_class_id'),
             'name' => request('name'),
             'form' => request('dosage_form'),
             'price'=> request('price'),
-            'picture' => 'default_picture.jpg' 
+            'picture' => 'medicines/default_picture.jpg' 
         ]);
 
-           return response()->json($medicine);
+         return response()->json($medicine);
 
 
-           return response('No file',500);
+         return response('No file',500);
 
-       }
+     }
 
 
 
@@ -111,7 +112,7 @@ class MedicinesController extends Controller
 
 
         // return response()->json($request);
-   }
+ }
 
     /**
      * Display the specified resource.
@@ -121,10 +122,10 @@ class MedicinesController extends Controller
      */
     public function show($id)
     {
-     $dosage = Dosage::find($id)->with('medicine');
-     dd($dosage);
+       $dosage = Dosage::find($id)->with('medicine');
+       dd($dosage);
      // return view('admin.medicines.show',compact('dosage'));
- }
+   }
 
     /**
      * Show the form for editing the specified resource.

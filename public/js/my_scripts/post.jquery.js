@@ -20,9 +20,7 @@ $("#barangay_id").on('change', function () {
 
 
 
-
 function storeData(data,url ){
-
     $.ajax({
         type:'POST',
         url: url  ,
@@ -122,7 +120,7 @@ function deactivateUser(url, id) {
 
     $.ajax({
         method: 'PUT',
-        
+
         url: url,
         
         data: {

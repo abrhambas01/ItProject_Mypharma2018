@@ -6,6 +6,7 @@ use App\Events\MemberIsAdded;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\User ; 
+
 class MemberIsAddedListener
 {
     /**

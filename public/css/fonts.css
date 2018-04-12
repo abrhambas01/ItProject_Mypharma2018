@@ -33,6 +33,7 @@
   font-style: normal;
   font-weight: 600
 }
+
 @font-face {
   font-family: 'Proxima Nova';
   src: url(../build/fonts/Proxima_Nova_Semibold_Italic.eot);
@@ -79,20 +80,36 @@
 }
 
 
+@font-face {
+  font-family : 'Roboto';
+  src: url(../dist/font/roboto/Montserrat-Regular.ttf) format('truetype');
+  font-style: normal;
+  font-weight: 300
+}
+
+
+@font-face {
+  font-family : 'Montserrat';
+  src: url(../build/fonts/roboto/Montserrat-Light.ttf) format('truetype');
+  font-style: normal;
+  font-weight: 300
+}
+
 .logo-1 {
   font-family : 'Montserrat Light';
 }
+
 .logo-2 {
   font-family : 'Montserrat';
 }
 
-.logo-main {
-  font-family : 'Proxima Nova';
+.mdl-layout-title {
+  font-family : 'Roboto';
 }
 
 
 .title {
-  font-family : 'Montserrat Light';
+  font-family : 'Montserrat';
 }
 
 body {
@@ -100,11 +117,41 @@ body {
 }
 
 form { 
-  font-family : 'Montserrat Light';
+  font-family : 'Montserrat';
+}
+
+.hero-header {
+  padding-top : 50px;
+}
+
+
+.mdl-card__supporting-text {
+  color: rgba(0,0,0,.54);
+  font-size: 15px;
+  overflow: hidden;
+  padding: 16px;
+  width: 90%;
+}
+
+.mdl-color--grey-100 {
+  background-color: ##fffafa !important ;
+} 
+
+.mdl-color-text--grey-600 {
+  color: #3c3c3c !important;
 }
 
 
 
 
-
-
+#toolbar .title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 56px;
+  margin-left: 16px;
+  text-transform: none;
+  letter-spacing: normal;
+  float: left;
+  font-family: 'Proxima Nova';
+}

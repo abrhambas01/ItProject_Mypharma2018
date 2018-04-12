@@ -36,8 +36,70 @@ class BarangaysController extends Controller
      */
     public function store(Request $request)
     {
+        
+        if ( request()->hasFile('barangay_hall_photo')) { 
 
-    }
+            $image = request()->file('barangay_hall_photo') ;
+
+            $path = $image->store('barangays','public');
+
+            // return $image->getClientOriginalName()   ; 
+            
+            // $thumbImage = Image::make(Storage::get($image))->resize(75,null,function($constraint){
+            //     $constraint->aspectRatio();
+            //     $constraint->upsize();
+            // })->encode('png',75);   
+
+            // $fileName = $image->getClientOriginalName() ; 
+
+            // Storage::put($image);
+            // Storage::put('public/medicines/'.$image);
+
+            $medicine = Barangay::create([  
+                'medicine_class_id' => request('medicine_class_id'),
+                'name' => request('name'),
+                'form' => request('dosage_form'),
+                'price'=> request('price'),
+                'picture' => $path 
+            ]);
+
+            return response()->json($medicine);
+
+        }
+
+        else {
+
+
+         $medicine = Medicine::create([  
+            'medicine_class_id' => request('medicine_class_id'),
+            'name' => request('name'),
+            'form' => request('dosage_form'),
+            'price'=> request('price'),
+            'picture' => 'medicines/default_picture.jpg' 
+        ]);
+
+         return response()->json($medicine);
+
+
+         return response('No file',500);
+
+     }
+
+
+
+
+
+        // $attachment_path = $this->upload($request->file('photo'), 'medicines');
+
+        // $this->makethumbNail($photo);
+
+        // Image::make($photo)->resize(75, 75)->save(storage_path('medicines/thumbs/'.$photo->hashName(),60));         
+
+
+
+        // return response()->json($request);
+
+ }
 
     /**
      * Display the specified resource.
@@ -88,26 +150,26 @@ class BarangaysController extends Controller
       }
       else {
 
-         $barangay = Barangay::find($id);
+       $barangay = Barangay::find($id);
 
-         $barangay->name = $request->name ;
+       $barangay->name = $request->name ;
 
-         $barangay->facebook_profile = $request->facebook_profile ;
+       $barangay->facebook_profile = $request->facebook_profile ;
 
-         $barangay->barangay_hall_picture  = $request->barangay_hall_photo ; 
+       $barangay->barangay_hall_picture  = $request->barangay_hall_photo ; 
 
-         $barangay->save();  
+       $barangay->save();  
 
 
-     }
+   }
 
 
 
 
         // Session::flash('success', 'Comment updated');
 
-     return redirect()->route('barangays.index');
- }
+   return redirect()->route('barangays.index');
+}
 
     /**
      * Remove the specified resource from storage.

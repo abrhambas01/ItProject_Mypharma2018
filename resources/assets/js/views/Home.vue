@@ -1,46 +1,30 @@
 <template>
-
-
-	<div class="widget">
-	<weather 
-		api-key="675c26ed66daf3e7490ead63b6b381b8"
-		latitude="24.886436"
-		longitude="91.880722"
-		language="en"
-		bar-color="52D1DC"
-		text-color="fff"
-		title="Weather for Cebu"	
-		units="us">
-	</weather>
-	
+	<div>
+		<section class="mdl-layout__tab-panel" id="fixed-tab-1">
+			<div class="page-content">
+				<parcels></parcels>
+			</div>
+		</section>
+		<section class="mdl-layout__tab-panel" id="fixed-tab-2">
+			<div class="page-content">
+				<delivery-map></delivery-map>
+			</div>
+		</section>
 	</div>
-
 </template>
 
 <script>
-import VueWeatherWidget from 'vue-weather-widget';
 
-import 'vue-weather-widget/dist/css/vue-weather-widget.css';
+	// import DeliveryParcels from './views/components/DeliveryParcels.vue';
+	import Parcels from './Parcels.vue';
+	import DeliveryMap from './DeliveryMap.vue';
 
-export default {
+	export default {	
+		components : { Parcels, DeliveryMap } , 
 
-	name: 'Home',
-	data(){
-		return {
-			animation : false
-		}
-
-
-	},
-	components : {  'weather': VueWeatherWidget } 
-
-};
+	};
 </script>
 
 <style lang="css" scoped>
-.widget {
 
-	margin-top: 20%;	
-
-}
 </style>

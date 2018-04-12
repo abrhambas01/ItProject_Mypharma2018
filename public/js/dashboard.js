@@ -11,7 +11,7 @@ $('#addMedicineForm').on('submit', function (e) {
         
         // storeUser(data,urlForStoringUser);
 
-    });
+});
 
 
 var timeout = null;
@@ -20,7 +20,7 @@ var textInput = document.getElementById('emailInput');
 
 
         // Listen for keystroke events
-textInput.onkeyup = function (e) {
+        textInput.onkeyup = function (e) {
 
         // Clear the timeout if it has already been set.
         // This will prevent the previous task from executing

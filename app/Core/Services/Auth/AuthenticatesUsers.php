@@ -23,13 +23,13 @@ trait AuthenticatesUsers {
    public function showLoginForm(){
 
     $detect = new DetectMobile();
-
     return view('auth.login')->with('detect',$detect);
 
-}
+    }
 
     /**
-     *  BackupLogin
+     * 
+      Backup Login
      **/
     public function showBasicLogin(){
 
@@ -131,11 +131,9 @@ trait AuthenticatesUsers {
         switch ($this->guard()->user()->role_id) 
         {
             case 1:  return 'admin.dashboard' ; break ;
-
-            
+       
             case 2:  return 'socialworker.dashboard';break; 
             
-
             case 3:  return 'courier.dashboard';break;             
             
 

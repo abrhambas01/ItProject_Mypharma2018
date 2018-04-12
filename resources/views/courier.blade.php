@@ -4,11 +4,8 @@
 <head>
   <title>Mypharma</title>
   <meta content="IE=edge" http-equiv="x-ua-compatible">
-
   <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
-
   <meta content="yes" name="apple-mobile-web-app-capable">
-
   <meta content="yes" name="apple-touch-fullscreen">
   <!-- Icons -->
   <link href="{{ asset('dist/css/ionicons.min.css') }}" media="all" rel="stylesheet" type="text/css">
@@ -22,16 +19,13 @@
   {{-- <link href=" {{ asset('manifest.json') }} " rel='manifest' > --}}
 
   @pwaManifest
-  
+
 
   <link href=" {{ asset('dist/css/leaflet.css') }} " rel='stylesheet' type='text/css'>
 
   <script src="{{ asset('dist/js/leaflet.js') }} "></script>
 
   <link rel="shortcut icon" href="{{ asset('assets/img/favicons/android-chrome-192x192.png') }} ">
-
-
-
 
   <script>
    window.App = {!! json_encode([
@@ -41,7 +35,7 @@
     'signedIn' => Auth::check()
     ]) !!};
   </script>
-  
+
   <!-- Google Analytics -->
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,6 +55,7 @@
 
     <!-- Sidebar -->
     <ul id="slide-out" class="side-nav primary-color collapsible">
+    
       <li>
 
         <div class="sidenav-header">
@@ -124,17 +119,17 @@
 
 
 
-{{-- 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZWTTkguiQpNFtckZZ5lpJLvVvMc0hsmI&libraries=geometry,places"></script>
---}}
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZWTTkguiQpNFtckZZ5lpJLvVvMc0hsmI&libraries=geometry,places&callback=initMap"></script>
 
-{{-- <script src="{{ asset('js/richmarker.js') }}"></script> --}}
 
-<script src="{{ mix('dist/js/app.js') }}"></script>
+  <script src="{{ asset('js/richmarker.js') }}"></script>
 
-<script src="{{ asset('dist/js/courier.js') }}"></script>
+  <script src="{{ mix('dist/js/app.js') }}"></script>
 
-<script src="{{ asset('dist/js/functions.js') }}"></script>
+  <script src="{{ asset('dist/js/courier.js') }}"></script>
+
+  <script src="{{ asset('dist/js/functions.js') }}"></script>
 
 
 </body>

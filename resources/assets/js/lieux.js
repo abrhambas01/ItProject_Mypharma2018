@@ -49,6 +49,7 @@ calcul_itin = function(origin) {
     for (var i=0; i < directionRenderers.length; i++) {
         directionRenderers[i].setMap(null);
     }
+
     directionRenderers = [];
     // create a request for each destination
     for (i = 0; i < lieux.length; i++) {    // guess destinations are in lieux...

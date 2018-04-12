@@ -58,6 +58,7 @@ class SocialWorkerController extends Controller
       ->where('barangay_id', '=', Auth::user()->barangay_id)
       ->where('status', '=', 1)
       ->get();
+      
       return view('socialworker.index', compact('seniorcitizens'));
     }
 

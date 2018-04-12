@@ -1,19 +1,22 @@
 import './bootstrap';
 
-import router from './routes';
+import './components';
 
 
-// import App from '../Courier.vue' ; 
 
-// Vue.component('app-footer',require('./views/components/Footer.vue'));
-Vue.component('user-avatar',require('./components/Avatar.vue'));
+import router   from './routes';
 
-import VueGeolocation from 'vue-browser-geolocation';
+import App from './views/App.vue';
 
-Vue.use(VueGeolocation);
+
+
+// import VueGeolocation from 'vue-browser-geolocation';
+
+// Vue.use(VueGeolocation);
 
 const app = new Vue({
-	el :'#main',
+	el :'#app',
+	render: h => h(App),
 	router 
 });	
 
