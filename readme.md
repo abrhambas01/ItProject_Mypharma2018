@@ -59,7 +59,7 @@ TO use one : Here is a
 
 ## To start developing / using this application 
 
- * Ensure [Git] (https://git-scm.com/downloads), [Composer](getcomposer.org) and [nodejs](https://nodejs.org/en/)is installed on your machine. *
+ * Ensure [Git] (https://git-scm.com/downloads), [Composer](https://getcomposer.org/) and [nodejs](https://nodejs.org/en/)is installed on your machine. *
 
 
 After typing the following in the terminal
