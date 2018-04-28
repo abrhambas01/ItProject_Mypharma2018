@@ -1,6 +1,5 @@
 
 
-3. From the folks at laracasts / stackoveflow /reddit and others..
 
 ## About Mypharma
 
