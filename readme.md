@@ -1,9 +1,3 @@
-
-## About Mypharma
-
-
-
-
 ## About Mypharma
 
 **Mypharma is a progressive  web application that delivers progressive capabilities that delivers free medicines to all senior citizens in Cebu City,PH** 
