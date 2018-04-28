@@ -8,25 +8,25 @@ const path = require('path');
 mix.js('resources/assets/js/app.js', 'public/dist/js/');
 
 
-mix.browserSync({
-	proxy: 'localhost:3000'
-});
+// mix.browserSync({
+// 	proxy: 'localhost:3000'
+// });	
 
 // run versioning on production only
-// if (mix.inProduction()) {
-// 	mix.version();
-// }
+if (mix.inProduction()) {
+	mix.version();
+}
 
 
 
 
 
 // fix css files 404 issue
-// mix.webpackConfig({
-// 	devServer: {
-// 		contentBase: path.resolve(__dirname, 'public'),
-// 	}
-// });
+mix.webpackConfig({
+	devServer: {
+		contentBase: path.resolve(__dirname, 'public'),
+	}
+});
 
 // mix.js('resources/assets/js/main.js', 'public/js/app.js');
 

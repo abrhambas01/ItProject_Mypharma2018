@@ -19,7 +19,7 @@
 		:icon="pin"
 		:position="startLocation" 
 		:clickable="true">
-	</gmap-marker>
+		</gmap-marker>
 
 	<gmap-marker v-for="(item, key) in coordinates" 
 	:key="key"
@@ -28,7 +28,8 @@
 	:position="getPosition(item.position)" 
 	:clickable="true" 
 	@click="toggleInfoWindow(m,i)">
-</gmap-marker>
+	
+	</gmap-marker>
 
 </gmap-map>
 

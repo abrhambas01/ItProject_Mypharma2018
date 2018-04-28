@@ -85,6 +85,8 @@ function directions(mode,k) {
   }
 
 }
+
+
 /** 
 
 Uses algorithms in providing the route

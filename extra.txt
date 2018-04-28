@@ -2,6 +2,18 @@ Unneccessary Codes..
 
 
 
+
+ {{-- scripts page --}}
+   {{-- <script src="{{ asset('js/gmaps.js') }}"></script> --}}
+
+
+ 
+   {{--  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZWTTkguiQpNFtckZZ5lpJLvVvMc0hsmI&libraries=geometry,places"></
+   script> --}}
+
+
+
+
 <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
             <header class="demo-drawer-header">
                 <img src="{{ asset('assets/img/avatars/default.jpg') }}" class="demo-avatar">

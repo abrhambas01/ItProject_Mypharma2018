@@ -1,36 +1,13 @@
 <?php
+/*
 
-/***
-    Classes I've created and directory location : 
-
-1. App\Core.
-
-2. App\Filters.
-
-
-3. App\Services.. 
-
-    **/
-/***********************************
-
-MYPHARMA ROUTES built with laravel 5.4 
-
-Stacks Used : 
-
-
-2. Jquery/Vuejs
-
-3. Chart.js/Pages.js
-
-4. Codebase Admin Panel. 
-
-5. Jetpack Mobile Template from Themeforest. 
-
-
-6. MYSQL (Server) -> 
-
-*********
-
+-------------------------
+|
+| MYPHARMA Route endpoints. 
+|
+|
+|
+-----------------------------
 */
 
 
@@ -97,17 +74,11 @@ Route::group(['middleware'=> ['auth','isAdmin'], 'prefix' => 'admin'], function 
 });
 
 
-
 /*
 
+
 ******************
-
-
-
-Social Worker Routes
- Starts here
-
-
+Social Worker Routes Starts here
 ******************
 
 */
@@ -264,25 +235,32 @@ Route::group(['middleware' => ['auth', 'isCourier']], function () {
   // Route::get('/', 'CourierController@dashboard')->name('courier.dashboard');
 
   Route::get('/', 'CourierController@home')->name('courier.dashboard');
-  Route::get('courier/parcels/to-pick-up','CourierController@getTodaysDeliveries')->name('courier.pickup');
-  Route::get('courier/deliveries/today','PagesController@deliveryMap')->name('courier.deliveries');
 
 
-  // Route::get('courier/dashboard','CourierController')->name('')
+
 });
-
-
 /*
+other courier routes
+
+Route::get('courier/{id}','CourierController@');
+Route::get('courier/parcels/to-pick-up','CourierController@getTodaysDeliveries')->name('courier.pickup');
+Route::get('courier/deliveries/today','PagesController@deliveryMap')->name('courier.deliveries');
+Route::post('')
+Route::get('courier/dashboard','CourierController')->name('')
+*/
+
+
+  /*
   |-------------------------------------------------------------------------------
-           
 
-            C O N S U M A B L E API's.. in mypharma
-          Version 1 =>  api/v1
 
- |-------------------------------------------------------------------------------
+  C O N S U M A B L E API's.. in mypharma
+  Version 1 =>  api/v1
 
-        
- *************************************/
+  |-------------------------------------------------------------------------------
+
+
+*/
 
 /*
 |-------------------------------------------------------------------------------
@@ -305,7 +283,8 @@ owner_name
 
 */
 
-Route::get('api/v1/parcels/to-pack','CourierController@getTodaysParcelsToPack');
+
+Route::get('parcels/to-pack/{id}','CourierController@getTodaysParcelsToPack');
 
 
 /*
@@ -322,7 +301,7 @@ Route::get('api/v1/parcels/to-pack','CourierController@getTodaysParcelsToPack');
 
 */
 
- Route::get('api/v1/parcels','CourierController@getDeliveriesInformation')->name('api.deliveries');
+      Route::get('api/v1/parcels','CourierController@getDeliveriesInformation')->name('api.deliveries');
 
 
 /** 
@@ -430,6 +409,10 @@ Route::get('auth/users',function(){
 
 }) ; 
 
+
+
+
+
 /** 
 
 Returns all barangays (response in json)..  
@@ -515,8 +498,7 @@ Route::get('api/v1/delivery/information',function(){
 
 Widgets for Administrators 
 returns stats of the applications.. 
-
-**/
+*/
 
 Route::get('api/v0/widget-stats','AdminController@widgetStats');
 
@@ -561,7 +543,7 @@ Route::get('api/v1/de',function(){
 
 
 Route::get('api/v1/recipients',function(){
-  
+
   $recipients = CustomerParcelDelivery::join('senior_citizens','senior_citizens.id','=','customer_parcels_deliveries.senior_citizen_id')->join('medicine_dosages','customer_parcels_deliveries.product_dosage_id','=','medicine_dosages.id')->join('medicines','medicine_dosages.medicine_id','=','medicines.id')
   ->where('delivery_date','=',Carbon::tomorrow())
   ->select('first_name','middle_name','last_name','dosage_volume','form','generic_name','product_quantity','mobile_phone')->get() ; 
@@ -662,7 +644,11 @@ Route::get('/get/social-workers','AdministratorController@getSocialWorkers');
 
 // Route::get('api/v1/sms/')
 
-//Test pusher.. 
+/*
+ * Test pusher.. Routes..
+ *
+ */
+
 Route::get('/fire',function(){
   event(new MemberIsAdded);
   return 'fired' ; 
@@ -692,6 +678,9 @@ Route::get('/fire/parcel-delivered',function(){
 
 
 
+/**
+ * 
+ */
 
 
 
@@ -748,7 +737,10 @@ Route::get('seed/statuses', function(){
     ]); 
 
 });
-
+/**
+ * 
+ test routes
+ */
 
 
 // $id = Auth::id(); 
@@ -890,9 +882,26 @@ Route::get('dashboard','AppController@dashboard');
 
 
 
-// Auth Routes. 
+/**
+*
+* 
+*  Auth Routes. 
+*/
+
+
 Route::get('login', ['as' => 'login', 'uses' => 'AuthController@showLoginForm']);
+
+
+/**
+ * 
+ * Another login form for mobile.. using mdl
+ */
+Route::get('auth/login','AuthController@loginFormTest') ;
+
+
+
 Route::post('login', 'AuthController@postLogin')->name('login');
+
 Route::get('reset/password','AuthController@resetPassword')->name('password.reset');
 Route::post('reset/password','AuthController@saveNewPassword');
 
@@ -904,6 +913,7 @@ Route::get('logout', 'AuthController@logout');
 Route::get('/home', function () {
   return view('index');
 });
+
 
 
 
