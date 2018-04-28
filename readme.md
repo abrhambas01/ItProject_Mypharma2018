@@ -24,8 +24,6 @@ After typing the following in the terminal
 
 Ensure Npm is installed on the computer https://nodejs.org/en/download/ [64 bit installer is available](https://nodejs.org/dist/v8.10.0/node-v8.10.0-x64.msi)
 
->>>>>>> fd58b20e2c52d0895979e54bd841a87ea38675ad
-
 # Steps to Reproduce 
 
 
