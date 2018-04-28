@@ -40,9 +40,12 @@ class CourierController extends Controller {
   public function home()
   {
     app('debugbar')->disable();
-    return view('courier.index');
+    return view('courier.dashboard');
   }
 
+
+
+  
   public function getTodaysDeliveries()
   {
     app('debugbar')->disable();
@@ -62,13 +65,14 @@ class CourierController extends Controller {
   | Description:    Gets the parcels to be delivered. then pack it then mark if check or do not check..
   | Parameters: NONE ..
   */
-  public function getTodaysParcelsToPack()
+  public function getTodaysParcelsToPack($id)
   {
     // $parcels = $query->getParcelsForChecking($courier_id);
 
     $today = Carbon::today(); 
 
-    $id = auth()->user()->courier->id ;  
+    // $id = auth()->user()->courier->id ;  
+
 
     $customer_parcel = Parcel::with('owner')
     ->join('parcel_medicines','parcels.id','=','parcel_medicines.parcel_id')->where([ 

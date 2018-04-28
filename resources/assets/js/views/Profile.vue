@@ -107,7 +107,7 @@ export default {
 
 
 		getAuthenticatedUsersName(){
-			axios.get('/get/profile').then('').catch
+			// axios.get('/get/profile').then('').catch
 		},
 
 

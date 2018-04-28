@@ -51,38 +51,38 @@
 
 
 
-	{{-- <script>
-		$(function(){
-			function geolocate(){
+	<script>
+		// $(function(){
+		// 	function geolocate(){
 
-				navigator.geolocation.getCurrentPosition(function (pos) {
-					var lat = pos.coords.latitude;
+		// 		navigator.geolocation.getCurrentPosition(function (pos) {
+		// 			var lat = pos.coords.latitude;
 
-					var lng = pos.coords.longitude;
+		// 			var lng = pos.coords.longitude;
 
-					if (lat == null) {
+		// 			if (lat == null) {
 
-						alert("GPS not activated!");
+		// 				alert("GPS not activated!");
 
-					}
+		// 			}
 
-					else{
+		// 			else{
 
-						alert("Latitude: "+ lat + " , Longitude: " + lng );
+		// 				alert("Latitude: "+ lat + " , Longitude: " + lng );
 
-					}
-				});
+		// 			}
+		// 		});
 
-			}
+		// 	}
 
 
-			geolocate(); 
-		});
+		// 	geolocate(); 
+		// });
 
 	</script>
- --}}
 
- 
+
+	
 	@yield('js')
 
 

@@ -1,11 +1,9 @@
 <!DOCTYPE HTML>
 <html lang="en" class="no-focus"> <!--<![endif]-->
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <title>@yield('title')</title>
-
   <meta name="description" content="">
 
   <meta name="author" content="pixelcave">
@@ -17,7 +15,7 @@
   <meta property="og:title" content="">
   
   <meta property="og:description" content="t">
-  
+
   <meta property="og:type" content="">
   
   <meta property="og:url" content="">
@@ -25,7 +23,6 @@
   <meta property="og:image" content="">
 
   <!-- Icons -->
-
 
   <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
   <link rel="shortcut icon" href="{{ asset('assets/img/favicons/android-chrome-192x192.png') }} ">
@@ -103,7 +100,7 @@
    </main>
    <!-- END Main Container -->
 
-   <!-- Footer -->
+   <!-- Footer <-->
    @include('admin.partials.footer')
    <!-- END Footer -->
  </div>

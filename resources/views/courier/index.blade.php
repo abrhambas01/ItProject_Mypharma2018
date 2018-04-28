@@ -20,7 +20,7 @@
 </div>
 <div class="page animated fadeinright">
 	<div class="hero-header bg-5 animated fadeinright">
-		<div class="hero-title">Parcels to pack up</div>
+		<div lass="hero-title">Parcels to pack up</div>
 	</div>
 	<div class="todo animated fadeinright delay-1" id="test1">
 		<p class="todo-element">
@@ -41,16 +41,22 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script>
 	var dialog = document.querySelector('dialog');
+	
 	var showDialogButton = document.querySelector('#show-dialog');
+	
 	if (! dialog.showModal) {
 		dialogPolyfill.registerDialog(dialog);
 	}
+
 	showDialogButton.addEventListener('click', function() {
 		dialog.showModal();
 	});
+
+	
 	dialog.querySelector('.close').addEventListener('click', function() {
 		dialog.close();
 	});
+
 
 
 	$(function(){

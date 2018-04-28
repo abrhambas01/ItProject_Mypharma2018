@@ -1,18 +1,43 @@
-
 import VueRouter from 'vue-router';
 
-import Home from './views/Home.vue';
-import Account from './views/Account.vue' ; 
+import Home from './pages/Home.vue';
+
+import Account from './pages/Account.vue' ; 
+
+import ToPack from './pages/ToPack.vue';
+
+import StartDelivering from './pages/StartDelivering.vue';
 
 const routes = [ 	
 {
-	path: '/', 
-	component: Home
+
+	/**
+	Homepage for Courier
+	*/
+	path: '/courier/:id' , 	
+	name : 'courierHome',
+	component: Home,	
+	children : 
+	[ 
+
+	{ path : 'to-pack', name: 'toPack', component : ToPack, }, 
+	
+	{ path : 'start-delivering', name : 'startDelivery' , component : StartDelivering }	
+	
+	]
 },
 {
-	path : '/account', 
+	path : '/account', 	
+	name : 'account',
 	component: Account
+}, 
+{ 
+	path : '/', 
+	name : 'dashboard',
+	component : Home
 }
+
+
 
 ];
 

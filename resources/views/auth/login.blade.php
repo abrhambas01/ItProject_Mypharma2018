@@ -4,9 +4,9 @@
 
 @if ( $detect->isMobile())
 
-@include('partials.mobile.sidebar')
+	@include('partials.mobile.sidebar')
 
-@include('partials.mobile.toolbar')
+	@include('partials.mobile.toolbar')
 
 
 @endif
@@ -27,7 +27,7 @@
 			@endif
 
 
-		</h1>
+	</h1>
 
 		
 		<h5>Log In to your Account</h5>
@@ -85,14 +85,14 @@
 			var key = e.which;
 			if (key == 13) {
 // As ASCII code for ENTER key is "13"
-		
+
 
 		$('#loginForm').submit(); // Submit form code
-			
-				}
-			
+		
+	}
+	
 
-			});
+});
 
 
 
