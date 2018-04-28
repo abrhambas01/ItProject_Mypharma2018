@@ -30,9 +30,7 @@ Ensure Npm is installed on the computer https://nodejs.org/en/download/ [64 bit 
 ```
 $ composer install
 $ npm install  or yarn install
-$ php artisan serve <options> or 
-	> if valet is installed use that
-
+$ php artisan serve <options> 
 $ npm run dev 
 $ npm run watch
 
