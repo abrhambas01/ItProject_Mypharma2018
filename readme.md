@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 ## About Mypharma
-=======
+
 
 
 
@@ -40,18 +40,16 @@ $ npm run watch
 
 ```
 
-<<<<<<< HEAD
 > Ensure [Git] (https://git-scm.com/downloads), [Composer](https://getcomposer.org/) and [nodejs](https://nodejs.org/en/) is installed on your machine. 
-=======
->>>>>>> fd58b20e2c52d0895979e54bd841a87ea38675ad
 
 
 
-<<<<<<< HEAD
+
+
 ``` $ git clone  https://github.com/abrhambas01/ItProject_Mypharma2018.git```
-=======
+
 ## Special thanks : (ALL RIGHTS RESERVED)
->>>>>>> fd58b20e2c52d0895979e54bd841a87ea38675ad
+
 
 
 
